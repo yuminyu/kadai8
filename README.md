@@ -43,3 +43,8 @@ node.js v18.2.0
 
 
 
+apikey.jsというファイルをREADME.mdと同じ階層に保存して、以下２行を書けば実行できるはずです、、、
+const Application_ID = "***********";
+exports.Application_ID = Application_ID;
+
+
