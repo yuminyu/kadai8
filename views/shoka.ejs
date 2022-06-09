@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>楽天APIで本を検索して表示</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>番号</th>
+            <th>表紙画像</th>
+            <th>タイトル</th>
+            <th>出版社</th>
+            <th>積んだ日</th>
+            <th>読み終わった日</th>
+        </tr>
+        <% for(let i = 0; i < yomiowalist.length; i++) { %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><img src=" <%= yomiowalist[i].imgurl %>"></td>
+            <td><%= yomiowalist[i].title %></td>
+            <td><%= yomiowalist[i].publisher %></td>
+            <td><%= yomiowalist[i].setdate %></td>
+            <td><%= yomiowalist[i].compdate %></td>
+        </tr>
+        <% } %>
+    </table>
+    <a href='/'>
+        TOPに戻る
+    </a>
+</body>
+</html>

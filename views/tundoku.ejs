@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>楽天APIで本を検索して表示</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>番号</th>
+            <th>表紙画像</th>
+            <th>タイトル</th>
+            <th>出版社</th>
+            <th>積んだ日</th>
+            <th>読み終わったらポチ</th>
+        </tr>
+        <% for(let i = 0; i < tundokulist.length; i++) { %>
+        <tr>
+            <form action="/delete" method="post">
+            <td><%= i+1 %></td>
+            <td><img src=" <%= tundokulist[i].imgurl %>"></td>
+            <td><%= tundokulist[i].title %></td>
+            <td><%= tundokulist[i].publisher %></td>
+            <td><%= tundokulist[i].setdate %></td>
+            <td>
+                <input type="hidden" name="imgurl" value="<%= tundokulist[i].imgurl %>">
+                <input type="submit" value="読み終わった">
+            </td>
+            </form>
+        </tr>
+        <% } %>
+    </table>
+    <a href='/'>
+        TOPに戻る
+    </a>
+</body>
+</html>
